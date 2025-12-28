@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio - Top Center Profile</title>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+<style>
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:#0f1220;
+  color:#d6e1ff;
+}
+header{
+  text-align:center;
+  padding:70px 20px 40px 20px;
+  position:relative;
+}
+.profile-wrap{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  margin:0 auto 18px auto;
+  padding:6px;
+  background:linear-gradient(135deg,#6bc2ff,#9a6bff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+.profile-pic{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #0f1220;
+}
+h1{
+  margin:8px 0 2px 0;
+  font-size:2.2rem;
+}
+h1 span{color:#6bc2ff;}
+.subtitle{
+  color:#9fb0ff;
+  margin-top:6px;
+}
+nav{
+  margin-top:24px;
+}
+nav a{
+  text-decoration:none;
+  color:#b8c1ff;
+  margin:0 12px;
+  font-weight:600;
+}
+nav a:hover{color:#ffffff;}
+main{
+  max-width:900px;
+  margin:20px auto;
+  padding:0 18px 40px;
+}
+section{
+  margin-top:28px;
+}
+
+/* Project Cards */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+  margin-top:12px;
+}
+.project-card{
+  background:#1b1f35;
+  border-radius:14px;
+  padding:18px;
+  border:1.5px solid #2d3358;
+  box-shadow:0 8px 24px rgba(0,0,0,.28);
+  transition:transform .18s, box-shadow .18s;
+}
+.project-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,.35);
+}
+.project-icon{
+  font-size:30px;
+  margin-bottom:8px;
+}
+.project-title{
+  font-weight:700;
+  margin-bottom:6px;
+}
+.project-text{
+  color:#b8c1ff;
+  font-size:.95rem;
+  line-height:1.45rem;
+}
+.tech-chip{
+  display:inline-block;
+  margin-top:10px;
+  padding:6px 12px;
+  border-radius:20px;
+  background:#273062;
+  color:#aeb8ff;
+  font-size:.8rem;
+  font-weight:600;
+}
+
+
+/* Enhanced Attractive Style */
+body{
+  background: radial-gradient(1200px 600px at 20% -10%, #4c6ee8 0%, transparent 40%),
+              radial-gradient(900px 500px at 90% 10%, #ff7bb0 0%, transparent 45%),
+              #0d1021;
+}
+.project-card{
+  background: linear-gradient(145deg, rgba(35,40,80,.75), rgba(20,22,45,.75));
+  backdrop-filter: blur(8px);
+  border:1.5px solid rgba(255,255,255,.18);
+}
+.project-card:hover{
+  transform:translateY(-6px) scale(1.01);
+  border-color:rgba(255,255,255,.4);
+}
+.tech-chip{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.22);
+}
+h2{
+  letter-spacing:.5px;
+}
+header .profile-wrap{
+  background:linear-gradient(135deg,#6bc2ff,#ff7bb0);
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="profile-wrap">
+    <img src="profile.jpg" alt="Profile Photo" class="profile-pic" />
+  </div>
+  <h1>I'm <span>Mirza Shahzeb Baig</span></h1>
+  <div class="subtitle">Computer Science Student & Aspiring Developer</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      Welcome to my portfolio. This website highlights my learning journey, projects,
+      and the skills I’m developing as an aspiring developer.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>Python • C • Java • HTML • CSS • JavaScript (Basics)</p>
+  </section>
+
+  
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-title">Personal Portfolio Website</div>
+      <div class="project-text">
+        A modern, fully responsive personal portfolio designed to present my skills, projects, and contact details in a clean and structured format. The website emphasizes usability, visual consistency, and mobile‑friendly design principles.
+      </div>
+      <span class="tech-chip">HTML • CSS • JavaScript</span>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Student Management System</div>
+      <div class="project-text">
+        A Python‑based management application that enables secure storage and handling of student records using MySQL. The system supports core CRUD operations and demonstrates structured program design and database integration.
+      </div>
+      <span class="tech-chip">Python • MySQL</span>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Weather Application</div>
+      <div class="project-text">
+        A lightweight web application that retrieves real‑time weather information from a public API and displays it through a simple user interface, focusing on clarity and functional interaction.
+      </div>
+      <span class="tech-chip">HTML • CSS • JavaScript • API</span>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Basic Calculator (C)</div>
+      <div class="project-text">
+        A command‑line calculator program that performs essential arithmetic operations while handling user input reliably. Built to reinforce logic‑based programming concepts in C.
+      </div>
+      <span class="tech-chip">C Programming</span>
+    </div>
+
+  </div>
+</section>
+
+
+  
+<section id="education">
+  <h2>Education</h2>
+  <p><b>Schooling:</b> Triveni High School</p>
+  <p><b>Higher Secondary Education:</b> Sri Chaitanya Junior College</p>
+  <p><b>Under Graduation:</b> SR University</p>
+</section>
+
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: shahzebmirza40@gmail.com</p>
+  </section>
+</main>
+</body>
+</html>
