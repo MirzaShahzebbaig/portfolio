@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirza Shahzeb Baig - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(120deg, #232946 0%, #121629 100%);
+            margin: 0;
+            padding: 0;
+            color: #eebbc3;
+        }
+        header {
+            background: rgba(35,41,70,0.97);
+            padding: 40px 0 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            color: #eebbc3;
+            letter-spacing: 2px;
+            text-shadow: 1px 2px 8px #23294655;
+        }
+        header h2 {
+            margin: 10px 0 0 0;
+            font-weight: 400;
+            color: #b8c1ec;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+        }
+        nav {
+            margin-top: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #b8c1ec;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.2s, border-bottom 0.2s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+        }
+        nav a:hover {
+            color: #eebbc3;
+            border-bottom: 2px solid #eebbc3;
+        }
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            background: rgba(35,41,70,0.97);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+            padding: 40px 30px;
+            border: 2px solid #eebbc3;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h3 {
+            color: #e17055;
+            margin-bottom: 16px;
+            font-size: 1.6em;
+            letter-spacing: 1px;
+        }
+        .skills-list, .projects-list {
+            list-style: none;
+            padding: 0;
+        }
+        .skills-list li {
+            display: inline-block;
+            background: linear-gradient(90deg, #ffeaa7 60%, #eebbc3 100%);
+            color: #232946;
+            margin: 6px 8px 6px 0;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1em;
+            box-shadow: 0 2px 8px #eebbc355;
+            transition: transform 0.15s;
+        }
+        .skills-list li:hover {
+            transform: scale(1.08);
+            background: linear-gradient(90deg, #eebbc3 60%, #ffeaa7 100%);
+        }
+        .project {
+            background: linear-gradient(100deg, #f1f2f6 80%, #eebbc3 100%);
+            border-radius: 14px;
+            padding: 22px 26px 18px 26px;
+            margin-bottom: 22px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            position: relative;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .project:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 6px 24px #eebbc355;
+        }
+        .project-title {
+            font-size: 1.25em;
+            color: #0984e3;
+            margin-bottom: 6px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .project-desc {
+            color: #636e72;
+            margin-bottom: 8px;
+        }
+        .project-tech {
+            font-size: 0.97em;
+            color: #b2bec3;
+            margin-bottom: 10px;
+        }
+        .details-btn {
+            background: linear-gradient(90deg, #e17055 60%, #fdcb6e 100%);
+            color: #232946;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, transform 0.15s;
+            box-shadow: 0 2px 8px #eebbc355;
+            margin-top: 6px;
+        }
+        .details-btn:hover {
+            background: linear-gradient(90deg, #fdcb6e 60%, #e17055 100%);
+            color: #232946;
+            transform: scale(1.06);
+        }
+        .project-details {
+            display: none;
+            background: #232946;
+            border-radius: 10px;
+            padding: 18px;
+            color: #ffeaa7;
+            box-shadow: 0 2px 8px #eebbc355;
+            margin-top: 18px;
+        }
+        .code-block {
+            background: #181a2a;
+            color: #ffeaa7;
+            border-radius: 8px;
+            padding: 16px;
+            font-size: 0.98em;
+            overflow-x: auto;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 8px #eebbc355;
+        }
+        .screenshot {
+            display: block;
+            margin: 18px auto;
+            max-width: 90%;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px #eebbc355;
+            border: 2px solid #eebbc3;
+        }
+        .contact-info {
+            background: linear-gradient(90deg, #eebbc3 80%, #ffeaa7 100%);
+            color: #232946;
+            border-radius: 12px;
+            padding: 22px 28px;
+            font-size: 1.1em;
+            box-shadow: 0 2px 8px #eebbc355;
+            text-align: center;
+            margin-top: 16px;
+        }
+        .contact-info a {
+            color: #0984e3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        /* Decorative shapes */
+        .shape1, .shape2 {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.18;
+        }
+        .shape1 {
+            top: -40px;
+            left: -60px;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, #eebbc3 60%, #fdcb6e 100%);
+            border-radius: 50%;
+        }
+        .shape2 {
+            bottom: -60px;
+            right: -60px;
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle, #e17055 60%, #232946 100%);
+            border-radius: 50%;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 8px;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            .project {
+                padding: 14px 8px;
+            }
+            .contact-info {
+                padding: 12px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="shape1"></div>
+        <h1>Mirza Shahzeb Baig</h1>
+        <h2>B.Tech Student | SR University | 2nd Year</h2>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="shape2"></div>
+    </header>
+    <div class="container">
+        <section id="about">
+            <h3>About Me</h3>
+            <p>
+                Hello! I'm <b>Mirza Shahzeb Baig</b>, a passionate second-year B.Tech student at SR University. I love exploring new technologies and building creative solutions. My interests span both front-end and back-end development, and I enjoy working with a variety of programming languages and frameworks. I am always eager to learn, collaborate, and take on new challenges!
+            </p>
+        </section>
+        <section id="skills">
+            <h3>Skills</h3>
+            <ul class="skills-list">
+                <li>Python</li>
+                <li>C</li>
+                <li>Java</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript (Basic)</li>
+                <li>MySQL (Basic)</li>
+                <li>Flask (Beginner)</li>
+            </ul>
+        </section>
+        <section id="projects">
+            <h3>Projects</h3>
+            <div class="projects-list">
+                <!-- Portfolio Website Project -->
+                <div class="project">
+                    <div class="project-title">Personal Portfolio Website</div>
+                    <div class="project-desc">
+                        Designed and developed a responsive personal portfolio website using HTML, CSS, and a touch of JavaScript. Showcases my skills, projects, and contact information in an attractive layout.
+                    </div>
+                    <div class="project-tech">Tech: HTML, CSS, JavaScript</div>
+                    <button class="details-btn" onclick="showDetails('portfolio-details')">View Details</button>
+                    <div id="portfolio-details" class="project-details">
+                        <b>Description:</b>
+                        <p>
+                            This is the website you are viewing now! It is fully responsive and features a modern, attractive design. It includes navigation, project details, and a contact section.
+                        </p>
+                        <ul>
+                            <li>Responsive design for all devices</li>
+                            <li>Modern UI with gradients and custom styles</li>
+                            <li>Project details navigation</li>
+                            <li>Contact information with clickable email and phone</li>
+                        </ul>
+                        <b>Full Code Example (HTML structure):</b>
+                        <div class="code-block">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mirza Shahzeb Baig - Portfolio&lt;/title&gt;
+    &lt;!-- CSS and style code here --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;...&lt;/header&gt;
+    &lt;div class="container"&gt;
+        &lt;section id="about"&gt;...&lt;/section&gt;
+        &lt;section id="skills"&gt;...&lt;/section&gt;
+        &lt;section id="projects"&gt;...&lt;/section&gt;
+        &lt;section id="contact"&gt;...&lt;/section&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                        </div>
+                        <b>Screenshot:</b>
+                        <img src="screenshots/portfolio_home.png" alt="Portfolio Home Screenshot" class="screenshot">
+                        <h4>Description of Code</h4>
+                        <ul>
+                            <li>The <b>header</b> contains your name, title, and navigation links.</li>
+                            <li>The <b>container</b> holds all main sections: About, Skills, Projects, and Contact.</li>
+                            <li>Each <b>project</b> is a styled div with a title, description, tech stack, and a button to view details.</li>
+                            <li>CSS uses gradients, rounded corners, and responsive design for a modern look.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Student Management System Project -->
+                <div class="project">
+                    <div class="project-title">Student Management System</div>
+                    <div class="project-desc">
+                        Built a basic student management system with Python and MySQL for managing student records, grades, and attendance. Implemented CRUD operations and a simple CLI interface.
+                    </div>
+                    <div class="project-tech">Tech: Python, MySQL</div>
+                    <button class="details-btn" onclick="showDetails('sms-details')">View Details</button>
+                    <div id="sms-details" class="project-details">
+                        <b>Description:</b>
+                        <p>
+                            A command-line application to manage student data, including adding, updating, deleting, and viewing records. Data is stored in a MySQL database.
+                        </p>
+                        <ul>
+                            <li>Add, update, delete, and view student records</li>
+                            <li>Simple command-line interface</li>
+                            <li>Uses MySQL for persistent storage</li>
+                        </ul>
+                        <b>Full Code Example (Python):</b>
+                        <div class="code-block">
+<pre><code>import mysql.connector
+
+def connect():
+    return mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="yourpassword",
+        database="students"
+    )
+
+def show_students():
+    conn = connect()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM student_records")
+    for row in cursor.fetchall():
+        print(row)
+    conn.close()
+
+def add_student(name, grade):
+    conn = connect()
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO student_records (name, grade) VALUES (%s, %s)", (name, grade))
+    conn.commit()
+    conn.close()
+
+# Example usage:
+add_student("John Doe", "A")
+show_students()
+</code></pre>
+                        </div>
+                        <b>Screenshot:</b>
+                        <img src="screenshots/student_management.png" alt="Student Management System Screenshot" class="screenshot">
+                        <h4>Description of Code</h4>
+                        <ul>
+                            <li>Connects to a MySQL database using <b>mysql.connector</b>.</li>
+                            <li>Functions for adding and displaying students.</li>
+                            <li>Simple CLI for demonstration.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Weather App Project -->
+                <div class="project">
+                    <div class="project-title">Weather App (Mini Project)</div>
+                    <div class="project-desc">
+                        Developed a simple weather application that fetches real-time weather data using a public API and displays it in a user-friendly interface.
+                    </div>
+                    <div class="project-tech">Tech: HTML, CSS, JavaScript, OpenWeatherMap API</div>
+                    <button class="details-btn" onclick="showDetails('weather-details')">View Details</button>
+                    <div id="weather-details" class="project-details">
+                        <b>Description:</b>
+                        <p>
+                            A web app where users can enter a city name and get the current weather using the OpenWeatherMap API.
+                        </p>
+                        <ul>
+                            <li>Fetches real-time weather data</li>
+                            <li>Simple and clean UI</li>
+                            <li>Uses OpenWeatherMap API</li>
+                        </ul>
+                        <b>Full Code Example (JavaScript):</b>
+                        <div class="code-block">
+<pre><code>&lt;input id="city" type="text" placeholder="Enter city"&gt;
+&lt;button onclick="getWeather()"&gt;Get Weather&lt;/button&gt;
+&lt;div id="result"&gt;&lt;/div&gt;
+&lt;script&gt;
+function getWeather() {
+    var city = document.getElementById('city').value;
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=YOUR_API_KEY&units=metric')
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        document.getElementById('result').innerText = 
+          'Temperature: ' + data.main.temp + '°C';
+      });
+}
+&lt;/script&gt;
+</code></pre>
+                        </div>
+                        <b>Screenshot:</b>
+                        <img src="screenshots/weather_app.png" alt="Weather App Screenshot" class="screenshot">
+                        <h4>Description of Code</h4>
+                        <ul>
+                            <li>HTML input for city name and button to fetch weather.</li>
+                            <li>JavaScript fetches weather data from OpenWeatherMap API and displays temperature.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Calculator Project -->
+                <div class="project">
+                    <div class="project-title">Basic Calculator (C Language)</div>
+                    <div class="project-desc">
+                        Created a command-line calculator in C that performs basic arithmetic operations and handles user input errors gracefully.
+                    </div>
+                    <div class="project-tech">Tech: C</div>
+                    <button class="details-btn" onclick="showDetails('calc-details')">View Details</button>
+                    <div id="calc-details" class="project-details">
+                        <b>Description:</b>
+                        <p>
+                            A simple calculator program written in C that supports addition, subtraction, multiplication, and division.
+                        </p>
+                        <ul>
+                            <li>Handles basic arithmetic operations</li>
+                            <li>Command-line interface</li>
+                            <li>Input validation for operators</li>
+                        </ul>
+                        <b>Full Code Example (C):</b>
+                        <div class="code-block">
+<pre><code>#include &lt;stdio.h&gt;
+int main() {
+    char op;
+    double a, b;
+    printf("Enter operator (+, -, *, /): ");
+    scanf(" %c", &amp;op);
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &amp;a, &amp;b);
+    switch(op) {
+        case '+': printf("%.2lf\n", a+b); break;
+        case '-': printf("%.2lf\n", a-b); break;
+        case '*': printf("%.2lf\n", a*b); break;
+        case '/': printf("%.2lf\n", a/b); break;
+        default: printf("Invalid operator\n");
+    }
+    return 0;
+}
+</code></pre>
+                        </div>
+                        <b>Screenshot:</b>
+                        <img src="screenshots/calculator_c.png" alt="Calculator C Screenshot" class="screenshot">
+                        <h4>Description of Code</h4>
+                        <ul>
+                            <li>Prompts user for operator and two numbers.</li>
+                            <li>Performs calculation based on operator.</li>
+                            <li>Handles invalid operator input.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h3>Contact Me</h3>
+            <div class="contact-info">
+                <div><b>Email:</b> <a href="mailto:shahzebmirza40@gmail.com">shahzebmirza40@gmail.com</a></div>
+                <div><b>Contact No:</b> <a href="tel:+917997788609">+91 7997788609</a></div>
+            </div>
+        </section>
+    </div>
+    <script>
+        // Show only one project details at a time
+        function showDetails(id) {
+            document.querySelectorAll('.project-details').forEach(function(detail) {
+                detail.style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+            // Scroll to the opened details
+            document.getElementById(id).scrollIntoView({behavior: "smooth", block: "center"});
+        }
+        // Hide details when clicking outside
+        document.body.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('details-btn') && !e.target.closest('.project-details')) {
+                document.querySelectorAll('.project-details').forEach(function(detail) {
+                    detail.style.display = 'none';
+                });
+            }
+        });
+        // Prevent closing when clicking inside details
+        document.querySelectorAll('.project-details').forEach(function(detail) {
+            detail.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+</body>
+</html>
